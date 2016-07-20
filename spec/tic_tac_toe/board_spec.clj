@@ -105,4 +105,15 @@
   (context "#generate-board-string"
     (it "returns a string for the UI to display"
       (should= grid-three-string (board/generate-board-string (board/initial-board 3)))
-      (should= grid-four-string (board/generate-board-string (board/initial-board 4))))))
+      (should= grid-four-string (board/generate-board-string (board/initial-board 4)))))
+
+  (context "#check-each-set-of-possible-moves"
+    (it "returns true if a given marker has a winning combination of moves"
+        (should= true (board/check-each-set-of-possible-moves x-wins "X"))
+        (should= false (board/check-each-set-of-possible-moves o-wins "X"))
+        (should= true (board/check-each-set-of-possible-moves o-wins "O"))))
+
+  (context "#check-each-marker-for-win"
+    (it "returns true if any marker has won the game"
+      (should= true (board/check-each-marker-for-win x-wins))
+      (should= true (board/check-each-marker-for-win o-wins)))))

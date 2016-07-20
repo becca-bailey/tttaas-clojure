@@ -8,7 +8,7 @@
   (assoc board spot marker))
 
 (defn replace-with-player-marker [players spots current-spot]
-  (let [[player-1 player-2] players 
+  (let [[player-1 player-2] players
         [player-1-spots player-2-spots] spots]
     (cond
       (contains? player-1-spots current-spot)
@@ -89,3 +89,16 @@
     (let [rows (map #(column-padding % size) (partition size board))
           divider (str "\n" (clojure.string/join (repeat (count (first rows)) "-")) "\n")]
       (clojure.string/join divider rows))))
+
+(defn check-each-set-of-possible-moves [board marker]
+  (loop [winning-combos (winning-combinations 3)]
+    (cond
+      (empty? winning-combos)
+        false
+      (is-a-winning-combination? board (first winning-combos) marker)
+        true
+      :else
+        (recur (rest winning-combos)))))
+
+(defn check-each-marker-for-win [board]
+    (or (check-each-set-of-possible-moves board "X")(check-each-set-of-possible-moves board "O")))
