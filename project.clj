@@ -11,4 +11,5 @@
   :plugins [[speclj "3.3.1"]
             [io.aviso/pretty "0.1.2"]]
   :test-paths ["spec"]
+  :aot :all
   :main tic-tac-toe.game-loop)
