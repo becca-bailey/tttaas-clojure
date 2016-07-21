@@ -100,5 +100,13 @@
       :else
         (recur (rest winning-combos)))))
 
+(defn marker? [text]
+  (or (= "X" text) (= "O" text)))
+
+(defn tie? [board]
+  (and (every? marker? board) (not (or (check-each-set-of-possible-moves board "X")(check-each-set-of-possible-moves board "O")))))
+
+
+
 (defn check-each-marker-for-win [board]
     (or (check-each-set-of-possible-moves board "X")(check-each-set-of-possible-moves board "O")))

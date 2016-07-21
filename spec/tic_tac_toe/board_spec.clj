@@ -116,4 +116,9 @@
   (context "#check-each-marker-for-win"
     (it "returns true if any marker has won the game"
       (should= true (board/check-each-marker-for-win x-wins))
-      (should= true (board/check-each-marker-for-win o-wins)))))
+      (should= true (board/check-each-marker-for-win o-wins))))
+
+  (context "#check-if-theres-a-tie" 
+    (it "should return true if there is no winner, and the board is full"
+      (should= true (board/tie? tie-game)))))
+      
