@@ -14,7 +14,7 @@
 
 (defn convert-board [board]
   (let [indexed-board (spot-with-index board)]
-    (map return-move-or-index indexed-board)))
+    (into [] (map return-move-or-index indexed-board))))
 
 (defn minimax-move [board-from-java]
   (let [game-state (game/game-state (convert-board board-from-java))]
