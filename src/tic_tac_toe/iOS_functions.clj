@@ -1,7 +1,8 @@
 (ns tic-tac-toe.iOS-functions
   (:require [tic-tac-toe.ai :as ai]
             [tic-tac-toe.game :as game]
-            [tic-tac-toe.player :as player]))
+            [tic-tac-toe.player :as player]
+            [tic-tac-toe.board :as board]))
 
 (defn switch-marker [marker]
   (if (= marker "X") "O" "X"))
@@ -29,3 +30,8 @@
   ([board-from-java computer-marker]
     (let [game-state (get-game-state (convert-board board-from-java) computer-marker)]
       (ai/best-computer-move game-state))))
+
+(defn easy-computer-move
+  [board-from-java]
+    (let [board (convert-board board-from-java)]
+      (rand-nth (board/available-spots board))))

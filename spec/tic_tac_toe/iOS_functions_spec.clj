@@ -28,4 +28,8 @@
 
     (context "#switch-marker"
       (it "returns the opposite marker"
-        (should= "X" (iOS/switch-marker "O")))))
+        (should= "X" (iOS/switch-marker "O"))))
+
+    (context "#easy-computer-move"
+      (it "returns a random available spot"
+        (should= 8 (iOS/easy-computer-move ["X" "O" "X" "O" "X" "O" "X" "O" ""])))))
