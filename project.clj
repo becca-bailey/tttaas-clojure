@@ -1,4 +1,4 @@
-(defproject tic-tac-toe "0.1.0-SNAPSHOT"
+(defproject tic-tac-toe "0.2.2-SNAPSHOT"
   :description "FIXME: write description"
   :url "http://example.com/FIXME"
   :license {:name "Eclipse Public License"
