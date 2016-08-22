@@ -1,4 +1,4 @@
-# Becca's Unbeatable Tic-Tac-Toe (in Clojure) [![Build Status](https://travis-ci.org/beccanelson/clojure-tic-tac-toe.svg?branch=master)](https://travis-ci.org/beccanelson/clojure-tic-tac-toe)
+# Becca's Unbeatable Tic-Tac-Toe (in Clojure) [![Build Status](https://travis-ci.org/beccanelson/clojure-tic-tac-toe.svg?branch=master)](https://travis-ci.org/beccanelson/tttaas-clojure)
 
 I bet you can't beat the computer!
 
